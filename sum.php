@@ -25,14 +25,15 @@ function f($a, $b) {
  }
   
   
- // 4.【応用】次のプログラムは、配列の中で１番大きい値を返すmax_rryと言う関数を実装しようとしてます。　途中の部分を完成させる。
-function $max_array ($arr) {
+ //4.【応用】次のプログラムは、配列の中で１番大きい値を返すmax_rryと言う関数を実装しようとしてます。　途中の部分を完成させる。
+function max_array ($arr) {
 //とりあえず配列の最初の要素を一番大きい値とする。
 $max_number = $arr [0];
 foreach ($arr as $a) {
+  $max_number<[0];
 }
 return $max_number; 
- }
+ } 
 
 
 // 5. 次のビルトイン関数の用途、使い方を調べて実際に使用してみる。
@@ -45,10 +46,44 @@ echo strip_tags ($str) ."\n";
 
 //array_push
 //<? php
-$array= ["apple", "orange"];
-//配列に要素を追加
-$arrayLength = array_push($array, "melon", "banana");
-//配列の要素数を出力
-echo $arrayLength . "\n"
-//要素追加後の配列を出力
-print_r ($array);
+$stack =array("orange","banana");
+array_push($stack,"apple","raspberry");
+print_r ($stack); 
+
+//array_merge
+//<? php
+$array1= array('a','b','c');
+$array2= array('d','e','f');
+print_r(array_merge($array1, $array2));
+
+//time,mktime
+//<?php
+$time = mktime(9);
+var_dump(date('Y年m月d日h時i分s秒',$time));
+print('<br/>');
+
+$time =mktime(10,10,10);
+var_dump(date('Y年m月d日h時i分s秒',$time));
+print('<br/>');
+
+$time =mktime(0,0,0,1,1,2020);
+var_dump(date('Y年m月d日h時i分s秒',$time));
+print('<br/>');
+
+//date
+//<? php
+//タイムゾーンを設定
+date_default_timezone_set('Asia/Tokyo');
+//UNIXタイムスタンプ（現在時刻）
+echo time()."\n";
+//現在日時をフォーマットする
+echo date('Y-m-d H:i:s'). "n";
+echo date('Y年m月d日 H時i分s秒')."\n";
+
+//時刻を指定してフォーマットする方法
+//<?php
+//タイムゾーンを設定
+date_default_timezone_set('Asia/Tokyo');
+//指定日時をフォーマットする
+echo date('Y年m月d日 H時i分s秒',strtotime('2020/1/1 10:20:30') )."\n";
+
